@@ -10,9 +10,16 @@ module.exports = {
     fontFamily: {
       sans: ["DM Sans", "sans-serif"],
     },
+    minHeight: {
+      "step-xl": "700px",
+      "step-sm": "426px",
+    },
     extend: {
       colors: {
-        primary: "#4A3AFF",
+        primary: {
+          DEFAULT: "#4A3AFF",
+          100: "#473BD1",
+        },
         secondary: "#FFC226",
         tertiary: {
           100: "#FFFFFF",
