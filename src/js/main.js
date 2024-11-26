@@ -1,6 +1,6 @@
 const steps = document.querySelectorAll(".step");
-const nextBtns = document.querySelectorAll(".next-btn");
-const prevBtns = document.querySelectorAll(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
 let currentStep = 0;
 
 const progressBar = document.querySelectorAll(".progress-bar");
@@ -19,24 +19,33 @@ function showStep(index) {
   steps.forEach((step, i) => {
     step.classList.toggle("hidden", i !== index);
   });
+
+  if (currentStep === 0) {
+    prevBtn.classList.add("invisible");
+  } else {
+    prevBtn.classList.remove("invisible");
+  }
+  
+  if (currentStep === 3) {
+    nextBtn.classList.add("invisible");
+  } else {
+    nextBtn.classList.remove("invisible");
+  }
+  
   updateProgressBar();
 }
 
-nextBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      showStep(currentStep);
-    }
-  });
+nextBtn.addEventListener("click", () => {
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep(currentStep);
+  }
 });
 
-prevBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (currentStep > 0) {
-      currentStep--;
-      showStep(currentStep);
-    }
-  });
+prevBtn.addEventListener("click", () => {
+  if (currentStep > 0) {
+    currentStep--;
+    showStep(currentStep);
+  }
 });
 showStep(currentStep);

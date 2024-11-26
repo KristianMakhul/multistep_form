@@ -11,8 +11,8 @@ module.exports = {
       sans: ["DM Sans", "sans-serif"],
     },
     minHeight: {
-      "step-xl": "700px",
-      "step-sm": "426px",
+      "step-xl": "630px",
+      "step-sm": "380px",
     },
     extend: {
       colors: {
