@@ -180,6 +180,7 @@
       free to add as much detail as needed.
     </p>
     <div class="relative mb-8 w-full max-w-2xl">
+      <form  class="form">
       <div class="rounded-3xl border border-tertiary-300 bg-tertiary-100 px-8 pb-2 pt-8 shadow-lg xl:px-8">
         <div class="flex items-center justify-between px-6 sm:px-2">
           <div class="progress-bar active group flex flex-1 items-center">
@@ -224,7 +225,7 @@
               <label for="name" class="block pb-4 text-sm font-medium text-tertiary-800 sm:text-base">Name</label>
               <div
                 class="flex w-full items-center justify-between rounded-full border border-tertiary-300 bg-tertiary-100 px-6 py-3 shadow-sm hover:border-tertiary-500">
-                <input type="text" id="name" placeholder="John Carter"
+                <input type="text" id="name" placeholder="John Carter" required maxlength="15"
                   class="text-sm placeholder-tertiary-600 focus:outline-none" />
                 <svg class="size-6">
                   <use xlink:href="#user"></use>
@@ -235,7 +236,7 @@
               <label for="email" class="block pb-4 text-sm font-medium text-tertiary-800 sm:text-base">Email</label>
               <div
                 class="flex w-full items-center justify-between rounded-full border border-tertiary-300 bg-tertiary-100 px-6 py-3 shadow-sm hover:border-tertiary-500">
-                <input type="email" id="email" placeholder="Email address"
+                <input type="email" id="email" placeholder="Email address" required
                   class="text-sm placeholder-tertiary-600 focus:outline-none" />
                 <svg class="size-6">
                   <use xlink:href="#email"></use>
@@ -247,7 +248,7 @@
                 number</label>
               <div
                 class="flex w-full items-center justify-between rounded-full border border-tertiary-300 bg-tertiary-100 px-6 py-3 shadow-sm hover:border-tertiary-500">
-                <input type="tel" id="tel" placeholder="(123) 456 - 7890"
+                <input type="tel" id="tel" placeholder="(123) 456 - 7890" required maxlength="12" minlength="6" pattern="[0-9]*" 
                   class="text-sm placeholder-tertiary-600 focus:outline-none" />
                 <svg class="size-6">
                   <use xlink:href="#number"></use>
@@ -258,7 +259,7 @@
               <label for="company" class="block pb-4 text-sm font-medium text-tertiary-800 sm:text-base">Company</label>
               <div
                 class="flex w-full items-center justify-between rounded-full border border-tertiary-300 bg-tertiary-100 px-6 py-3 shadow-sm hover:border-tertiary-500">
-                <input type="tel" id="company" placeholder="Company name"
+                <input type="tel" id="company" placeholder="Company name" required maxlength="15"
                   class="text-sm placeholder-tertiary-600 focus:outline-none" />
                 <svg class="size-6">
                   <use xlink:href="#company"></use>
@@ -306,7 +307,7 @@
                   <use xlink:href="#development"></use>
                 </svg>
               </div>
-              <input type="radio" name="step2-option" class="hidden" />
+              <input type="radio" name="step3-option" class="hidden" />
               <span class="font-medium text-tertiary-800">Development</span>
             </label>
             <label
@@ -316,7 +317,7 @@
                   <use xlink:href="#design"></use>
                 </svg>
               </div>
-              <input type="radio" name="step2-option" class="hidden" />
+              <input type="radio" name="step3-option" class="hidden" />
               <span class="font-medium text-tertiary-800">Web Design</span>
             </label>
             <label
@@ -326,7 +327,7 @@
                   <use xlink:href="#marketing"></use>
                 </svg>
               </div>
-              <input type="radio" name="step2-option" class="hidden" />
+              <input type="radio" name="step3-option" class="hidden" />
               <span class="font-medium text-tertiary-800">Marketing</span>
             </label>
             <label
@@ -336,7 +337,7 @@
                   <use xlink:href="#other"></use>
                 </svg>
               </div>
-              <input type="radio" name="step2-option" class="hidden" />
+              <input type="radio" name="step3-option" class="hidden" />
               <span class="font-medium text-tertiary-800">Other</span>
             </label>
           </div>
@@ -351,8 +352,8 @@
             Please review all the information you previously typed in the past
             steps, and if all is okay, submit your message to receive a
             project quote in 24 - 48 hours.</span>
-          <button
-            class="mx-auto mt-6 rounded-full bg-primary px-8 py-3 font-bold text-tertiary-100 hover:bg-primary-100 sm:px-16 sm:py-5">
+          <button type="submit"
+            class="submit-btn mx-auto mt-6 rounded-full bg-primary px-8 py-3 font-bold text-tertiary-100 hover:bg-primary-100 sm:px-16 sm:py-5">
             Submit
           </button>
         </div>
@@ -367,6 +368,7 @@
           Next Step
         </button>
       </div>
+      </form>
     </div>
   </main>
 
