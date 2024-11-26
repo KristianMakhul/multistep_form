@@ -3,37 +3,21 @@ const nextBtns = document.querySelectorAll(".next-btn");
 const prevBtns = document.querySelectorAll(".prev-btn");
 let currentStep = 0;
 
-const steps2 = document.querySelectorAll(".progress-bar");
+const progressBar = document.querySelectorAll(".progress-bar");
 
 function updateProgressBar() {
-  steps2.forEach((step, index) => {
-    const circle = step.querySelector(".rounded-full");
-    const line = step.querySelector(".progress");
-
+  progressBar.forEach((step, index) => {
     if (index <= currentStep) {
-      circle.classList.add("bg-primary", "text-tertiary-100");
-      circle.classList.remove("bg-tertiary-300", "text-tertiary-600");
-
-      if (line) {
-        line.classList.add("bg-primary");
-        line.classList.remove("bg-tertiary-300");
-      }
+      step.classList.add("active");
     } else {
-      circle.classList.add("bg-tertiary-300", "text-tertiary-600");
-      circle.classList.remove("bg-primary", "text-tertiary-100");
-
-      if (line) {
-        line.classList.add("bg-tertiary-300");
-        line.classList.remove("bg-primary");
-      }
+      step.classList.remove("active");
     }
   });
-}
+ }
 
 function showStep(index) {
   steps.forEach((step, i) => {
     step.classList.toggle("hidden", i !== index);
-    step.classList.toggle("active", i === index);
   });
   updateProgressBar();
 }

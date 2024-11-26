@@ -11,10 +11,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
     rel="stylesheet" />
+  <script defer src="./js/main.js"></script>
 </head>
 
 <body class="flex h-dvh flex-col bg-tertiary-100">
-  <div class="size-0 invisible">
+  <div class="invisible size-0">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
       <defs>
         <symbol id="logo" viewBox="0 0 40.4308 40.4299">
@@ -169,6 +170,7 @@
       Clone now
     </button>
   </header>
+
   <main class="flex grow flex-col items-center gap-3 px-24 py-14 lg:px-12 sm:px-4 sm:py-8">
     <h3 class="text-center text-4xl font-bold text-tertiary-800 sm:text-3xl">
       Get a project quote
@@ -177,34 +179,36 @@
       Please fill the form below to receive a quote for your project. Feel
       free to add as much detail as needed.
     </p>
-
     <div
       class="relative mb-8 w-full max-w-2xl rounded-3xl border border-tertiary-300 bg-tertiary-100 px-8 pb-2 pt-8 shadow-lg xl:px-8">
-
       <div class="flex items-center justify-between px-6 sm:px-2">
-        <div class="progress-bar flex flex-1 items-center">
-          <div class="flex size-8 items-center justify-center rounded-full bg-primary font-bold text-tertiary-100">
+        <div class="progress-bar active group flex flex-1 items-center">
+          <div
+            class="flex size-8 items-center justify-center rounded-full font-bold text-tertiary-100 group-[.active]:bg-primary">
             1
           </div>
-          <div class="progress mx-auto h-1 w-3/5 rounded-xl bg-tertiary-300 sm:w-2/5"></div>
+          <div class="mx-auto h-1 w-3/5 rounded-xl group-[.active]:bg-primary sm:w-2/5"></div>
         </div>
 
-        <div class="progress-bar flex flex-1 items-center">
-          <div class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600">
+        <div class="progress-bar group flex flex-1 items-center">
+          <div
+            class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600 group-[.active]:bg-primary group-[.active]:text-tertiary-100">
             2
           </div>
-          <div class="progress mx-auto h-1 w-3/5 rounded-xl bg-tertiary-300 sm:w-2/5"></div>
+          <div class="mx-auto h-1 w-3/5 rounded-xl bg-tertiary-300 group-[.active]:bg-primary sm:w-2/5"></div>
         </div>
 
-        <div class="progress-bar flex flex-1 items-center">
-          <div class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600">
+        <div class="progress-bar group flex flex-1 items-center">
+          <div
+            class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600 group-[.active]:bg-primary group-[.active]:text-tertiary-100">
             3
           </div>
-          <div class="progress mx-auto h-1 w-3/5 rounded-xl bg-tertiary-300 sm:w-2/5"></div>
+          <div class="mx-auto h-1 w-3/5 rounded-xl bg-tertiary-300 group-[.active]:bg-primary sm:w-2/5"></div>
         </div>
 
-        <div class="progress-bar">
-          <div class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600">
+        <div class="progress-bar group">
+          <div
+            class="flex size-8 items-center justify-center rounded-full bg-tertiary-300 font-bold text-tertiary-600 group-[.active]:bg-primary group-[.active]:text-tertiary-100">
             4
           </div>
         </div>
@@ -212,7 +216,7 @@
 
       <hr class="mb-8 mt-6 h-px bg-tertiary-400" />
 
-      <div class="step active min-h-step-sm flex flex-col sm:min-h-step-xl">
+      <div class="step flex min-h-step-sm flex-col sm:min-h-step-xl">
         <span class="text-lg font-bold text-tertiary-800">Contact details</span><br />
         <span class="text-tertiary-600">Lorem ipsum dolor sit amet consectetur adipisc.</span>
         <div class="flex flex-wrap">
@@ -239,8 +243,7 @@
             </div>
           </div>
           <div class="basis-1/2 pr-4 pt-10 sm:basis-full sm:pr-0">
-            <label for="tel" class="block pb-4 text-sm font-medium text-tertiary-800 sm:text-base">Phone
-              number</label>
+            <label for="tel" class="block pb-4 text-sm font-medium text-tertiary-800 sm:text-base">Phone number</label>
             <div
               class="flex w-full items-center justify-between rounded-full border border-tertiary-300 bg-tertiary-100 px-6 py-3 shadow-sm hover:border-tertiary-500">
               <input type="tel" id="tel" placeholder="(123) 456 - 7890"
@@ -262,7 +265,7 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-end grow items-end">
+        <div class="flex grow items-end justify-end">
           <button type="button"
             class="next-btn mb-2 mt-8 rounded-full bg-primary px-8 py-3 font-bold text-tertiary-100 hover:bg-primary-100 sm:px-4 sm:py-2">
             Next Step
@@ -270,7 +273,7 @@
         </div>
       </div>
 
-      <div class="step hidden min-h-step-sm flex flex-col sm:min-h-step-xl">
+      <div class="step flex hidden min-h-step-sm flex-col sm:min-h-step-xl">
         <span class="text-lg font-bold text-tertiary-800 sm:text-center">What’s your project budget?</span><br />
         <span class="text-tertiary-600 sm:text-center">Please select the project budget range you have in mind.</span>
         <div class="mt-4 grid grid-cols-2 gap-7 sm:grid-cols-1">
@@ -295,7 +298,7 @@
             <span class="ml-2 font-medium text-tertiary-800">$50.000 +</span>
           </label>
         </div>
-        <div class="flex justify-between grow items-end">
+        <div class="flex grow items-end justify-between">
           <button type="button"
             class="prev-btn mb-2 mt-8 rounded-full border border-primary bg-tertiary-100 px-8 py-3 text-primary hover:bg-tertiary-200 sm:px-4 sm:py-2">
             Previous Step
@@ -307,7 +310,7 @@
         </div>
       </div>
 
-      <div class="step hidden min-h-step-sm flex flex-col sm:min-h-step-xl">
+      <div class="step flex hidden min-h-step-sm flex-col sm:min-h-step-xl">
         <span class="text-lg font-bold text-tertiary-800">Our services</span><br />
         <span class="text-tertiary-600">Please select which service you are interested in.</span>
         <div class="mt-4 grid grid-cols-2 gap-7 sm:grid-cols-1">
@@ -352,7 +355,7 @@
             <span class="font-medium text-tertiary-800">Other</span>
           </label>
         </div>
-        <div class="flex justify-between grow items-end">
+        <div class="flex grow items-end justify-between">
           <button type="button"
             class="prev-btn mb-2 mt-8 rounded-full border border-primary bg-tertiary-100 px-8 py-3 text-primary hover:bg-tertiary-200 sm:px-4 sm:py-2">
             Previous Step
@@ -364,16 +367,16 @@
         </div>
       </div>
 
-      <div class="step hidden min-h-step-sm flex flex-col sm:min-h-step-xl sm:gap-7">
+      <div class="step flex hidden min-h-step-sm flex-col sm:min-h-step-xl sm:gap-7">
         <svg class="mx-auto size-40 sm:mt-10">
           <use xlink:href="#submit"></use>
         </svg>
         <span class="block py-6 text-center text-xl font-bold text-tertiary-800">Submit your quote request</span>
         <span class="block text-center text-tertiary-600">
           Please review all the information you previously typed in the past
-          steps, and if all is okay, submit your message to receive a
-          project quote in 24 - 48 hours.</span>
-        <div class="flex justify-between grow items-end">
+          steps, and if all is okay, submit your message to receive a project
+          quote in 24 - 48 hours.</span>
+        <div class="flex grow items-end justify-between">
           <button type="button"
             class="prev-btn mb-2 mt-8 rounded-full border border-primary bg-tertiary-100 px-8 py-3 text-primary hover:bg-tertiary-200 sm:px-4 sm:py-2">
             Previous Step
@@ -391,7 +394,7 @@
     <hr />
     <div class="flex flex-row items-center justify-between px-24 py-6 lg:px-12 sm:flex-col sm:gap-8 sm:px-4">
       <div class="flex flex-col gap-2 sm:order-2 sm:w-full">
-        <span class="inline-flex text-xl font-semibold  sm:justify-center sm:items-center">
+        <span class="inline-flex text-xl font-semibold sm:items-center sm:justify-center">
           <svg class="size-8 lg:size-6">
             <use xlink:href="#logo"></use>
           </svg>
@@ -411,7 +414,6 @@
       </div>
     </div>
   </footer>
-  <script src="./js/main.js"></script>
 </body>
 
 </html>
