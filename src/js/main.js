@@ -36,43 +36,27 @@ const validateField = (field, rules) => {
   const value = field.value.trim();
   const { required, maxlength, minlength, pattern, message } = rules;
 
-  if (required && !value) {
-    alert(message);
-    return false;
-  }
-
-  if (maxlength && value.length > maxlength) {
-    alert(message);
-    return false;
-  }
-
-  if (minlength && value.length < minlength) {
-    alert(message);
-    return false;
-  }
-
-  if (pattern && !pattern.test(value)) {
-    alert(message);
-    return false;
-  }
-
-  return true;
+  const hasError = [
+    required && !value,
+    maxlength && value.length > maxlength,
+    minlength && value.length < minlength,
+    pattern && !pattern.test(value),
+  ].includes(true);
+  hasError && alert(message);
+  return !hasError;
 };
 
 const validateRadioButtons = (fields) => {
   const radioArray = [...fields].filter((field) => field.type === "radio");
 
   if (radioArray.length > 0) {
-    const groupNames = [...new Set(radioArray.map((radio) => radio.name))];
+    const [groupName] = [...new Set(radioArray.map((radio) => radio.name))];
 
-    const isValid = groupNames.every((name) => {
-      const checkedRadio = steps[currentStep].querySelector(
-        `input[name="${name}"]:checked`,
-      );
-      return Boolean(checkedRadio);
-    });
+    const checkedRadio = steps[currentStep].querySelector(
+      `input[name="${groupName}"]:checked`,
+    );
 
-    if (!isValid) {
+    if (!checkedRadio) {
       alert("Please select an option.");
       return false;
     }
@@ -98,11 +82,7 @@ const isValidStep = () => {
 
 function updateProgressBar() {
   progressBar.forEach((step, index) => {
-    if (index <= currentStep) {
-      step.classList.add("active");
-    } else {
-      step.classList.remove("active");
-    }
+    step.classList.toggle("active", index <= currentStep);
   });
 }
 
