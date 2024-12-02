@@ -39,9 +39,9 @@ class MultiStepForm {
 
   init(curStep) {
     this.showStep(curStep);
-    this.nextBtn.addEventListener("click", this.handleNext.bind(this));
-    this.prevBtn.addEventListener("click", this.handlePrev.bind(this));
-    this.form.addEventListener("submit", this.handleSubmit.bind(this));
+    this.nextBtn.addEventListener("click", () => this.handleNext());
+    this.prevBtn.addEventListener("click", () => this.handlePrev());
+    this.form.addEventListener("submit", (e) => this.handleSubmit(e));
   }
 
   validateField(field, rules) {
